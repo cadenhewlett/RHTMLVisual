@@ -1,0 +1,17 @@
+{
+    "version": "1.2.5",
+    "author": {"name":"Caden Hewlett","email":"Visual"},
+    "resources": [
+        {
+            "resourceId": "rId0",
+            "sourceType": 5,
+            "file": "resources/mREVisualHTMLA4986341EC2347668ECFB32BD4CD87A1ALL.pbiviz.json"
+        }
+    ],
+    "visual": {"name":"MRE","displayName":"MREVis","guid":"mREVisualHTMLA4986341EC2347668ECFB32BD4CD87A1ALL","visualClassName":"Visual","version":"1.2.5","description":"Minimal Reproducible Example","supportUrl":"NA","gitHubUrl":"NA"},
+    "metadata": {
+        "pbivizjson": {
+            "resourceId": "rId0"
+        }
+    }  
+}
