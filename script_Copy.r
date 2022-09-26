@@ -1,8 +1,12 @@
-source('./r_files/flatten_HTML.r')
+
 
 ############### Library Declarations ###############
-libraryRequireInstall("ggplot2");
-libraryRequireInstall("plotly")
+library(ggplot2)
+library(plotly)
+############### Example Data from CSV ###############
+setwd("~/GitHub/RHTMLVisual")  
+dataset = read.csv("Specialty Skills.csv")
+
 ####################################################
 
 # static list of Attribute names, 
@@ -15,6 +19,8 @@ names = c("Activity and Mobility", "Care of the Surgical Patient",
           "Vital Signs And Physical Assessment")
 
 # ################### Actual code ####################
+# Match input column names to expectation
+colnames(dataset) = c("Attribute", gsub("\\.", " ", colnames(dataset)[2:ncol(dataset)])) 
 
 # Select Data
 # Note: This version involves mutating the original data frame instead of 
@@ -132,12 +138,12 @@ p = (ggplotly(g) %>%
                                          'hoverClosestCartesian', 
                                          'hoverCompareCartesian',
                                          'pan2d', 'lasso2d', 'toImage')))
-                                         
+# print(p)                                        
 ############# Create and save widget ###############
 
-internalSaveWidget(p, 'out.html');
+# internalSaveWidget(p, 'out.html');
 ####################################################
 
 ################ Reduce paddings ###################
-ReadFullFileReplaceString('out.html', 'out.html', ',"padding":[0-9]*,', ',"padding":0,')
+# ('out.html', 'out.html', ',"padding":[0-9]*,', ',"padding":0,')
 ####################################################
